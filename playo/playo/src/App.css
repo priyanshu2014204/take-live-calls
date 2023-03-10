@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,500&display=swap');
+
+body{
+    font-family: 'Barlow', sans-serif;
+}
+
+input{
+    width: 95%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 1rem;
+    background-color: #ffff;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 50px;
+}
+
+.container>div{
+    border-radius: 12px;
+   transition: transform 0.8s ease;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container>div:hover{
+    transform: scale(1.1); 
+}
+.container>div>div{
+   padding: 25px;
+}
+
+.container>div>div>p{
+   padding-top: 10px;
+ }
+.container>div>img{
+    width: 100%;
+    height: 200px;
+    border-radius: 12px 12px 0 0;
+    object-fit: contain;
+}
+
+.per_grid{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.per_grid>button{
+    padding: 8px;
+    border-radius: 6px;
+    background:linear-gradient(to  right,#63db0e,#05b75f);
+    border: 1px solid;
+    color: white;
+}
