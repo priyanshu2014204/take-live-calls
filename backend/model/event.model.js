@@ -44,7 +44,8 @@ const schema=new mongoose.Schema({
   ],
   organisedby:{
     type:String,
-    require:true
+    require:true,
+    ref:"user"
   }
 })
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Booking from '../pages/Booking'
+import Dashboard from '../pages/dashboard'
 import Details from '../pages/details'
 import Events from '../pages/Event'
 import Home from '../pages/Home'
@@ -18,6 +19,7 @@ const AllRoutes = () => {
         <Route path="/booking" element={<Booking/>}/>
         <Route path="/events" element={<Events/>}/>
         <Route path="/details" element={<Details/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="*" element={<h1>404 Not Found</h1>}/>
       </Routes>
     </div>

@@ -77,9 +77,16 @@ exports.bookticket=async(req,res)=>{
     if(event.partcipants.length===event.limit){
       return res.status(401).send({"msg":"No seats avaiable"})
     }
-    const validation=await EventPass.findOne({userid:user.id})
+    const validation=await EventPass.findOne({userid:user.id,eventid:id})
     if(validation){
+      if(validation.status=='pending'){
         return res.status(400).send({"msg":"Kindly wait for the conformation"})
+      }
+      else if(validation.status=='rejected'){
+          return res.status(401).send({"msg":"Sorry Admin rejected your request"})
+        }else{
+          return res.status(200).send({"msg":"Already accepted"})
+        }
     }
 
     const eventticket=await EventPass.insertMany([{
@@ -130,13 +137,43 @@ exports.conformticket=async (req,res)=>{
 exports.getdetailofevent=async (req,res)=>{
     try{
       const {eventid}=req.params;
-    const event =await Event.findById(eventid);
+    const event =await Event.findById(eventid).populate("organisedby");
     if(event!==undefined){
-        return res.status(200).send(event)
+      let obj=Object.assign({}, event);
+       obj=obj._doc
+       obj.seats=event.limit-event.partcipants.length;
+       console.log(obj)
+        return res.status(200).send(obj)
     }
       return res.status(500).send({"msg":"error occured"})
     }
     catch(err){
       return res.status(500).send({"msg":err})
     }
+}
+
+
+exports.mydashboard=async (req,res)=>{
+  try{
+    const {_id}=req.user;
+    const data=await EventPass.aggregate([
+      {
+        $lookup: {
+          from: 'events', // the name of the events collection
+          localField: 'eventid',
+          foreignField: '_id',
+          as: 'event',
+        }
+      }
+      ,
+      {
+        $match: {
+          'event.startat': { $gt: timeconvertor() },
+        }
+      }
+    ]);
+    return  res.status(200).send(data)
+  }catch(err){
+    return res.status(400).send({"msg":err.message})
+  }
 }

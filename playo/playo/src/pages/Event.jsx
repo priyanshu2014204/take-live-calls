@@ -1,20 +1,27 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
+import Swal from "sweetalert2"
 import { ContextApi } from "../context/Context";
 
 const Events = () => {
     const url='http://localhost:8080/event/detail'
-    const {state,setStateFunction} = useContext(ContextApi)
+    const {state,detail,setDetailFunction,setStateFunction} = useContext(ContextApi)
     const images=["https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/262524/pexels-photo-262524.jpeg?auto=compress&cs=tinysrgb&w=600"]
     const navigation=useNavigate()
    const showdetail=async (value)=>{
       let data=await fetch(url+"/"+value)
       if(data.status==200){
        data=await data.json();
-       console.log(data)
+       setDetailFunction(data);
+    //    console.log(data)
+       navigation("/details")
       }else{
-        alert("something went wrong")
+        Swal.fire(
+            'Error!',
+            'Something went wrong',
+            'warning'
+          )
       }
    }
 

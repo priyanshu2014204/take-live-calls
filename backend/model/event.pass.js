@@ -3,8 +3,9 @@ const mongoose=require("mongoose");
 
 const schema=new mongoose.Schema({
    eventid:{
-    type:String,
-    require:true
+    type:mongoose.Schema.Types.ObjectId,
+    require:true,
+    ref:"event"
    },
    userid:{
     type:String,

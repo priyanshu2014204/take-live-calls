@@ -62,3 +62,65 @@ input{
     border: 1px solid;
     color: white;
 }
+
+.bookcart{
+    /* border: 2px solid; */
+    display: flex;
+    width: 80%;
+    gap: 30px;
+    margin: auto;
+}
+
+
+.bookcart>div{
+}
+
+
+
+.bookcart>div>img{
+    width: 90%;
+}
+
+.bookcart>div:last-child{
+    text-align: center;
+    padding-top: 50px;
+    width: 30%;
+    /* display: flex; */
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.book_register{
+    padding: 8px;
+    border-radius: 6px;
+    background:linear-gradient(to  right,#63db0e,#05b75f);
+   
+    color: white;
+    height: 50px;
+}
+
+.timing>p,.organised>p:first-child,.location>p:first-child{
+    font-weight: 800;
+    font-size: 120%;
+    padding-top:25px ;
+    
+}
+
+.timing,.organised,.location{
+    /* border: 2px solid ; */
+    padding-bottom:25px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.timing{
+    margin-top: 50px;
+}
+
+.title_final{
+    text-align: center;
+    padding-top: 80px;
+    margin-bottom: 25px;
+}
