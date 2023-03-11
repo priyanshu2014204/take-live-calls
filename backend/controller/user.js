@@ -64,6 +64,10 @@ exports.login = async (req, res) => {
 
 
 
-exports.name=(req,res)=>{
-
+exports.details=(req,res)=>{
+    try{
+      return res.status(200).send(req.user)
+    }catch(err){
+       res.status(400).send({"msg":err.message})
+    }
 }

@@ -20,8 +20,9 @@ const Copyright = () => {
         justifyContent: "flex-end",
         fontSize: "1.1rem",
 			}}>
-			{titles.map((title) => (
+			{titles.map((title,idx) => (
 				<a
+				    key={idx}
 					href='#'
 					style={{
 						color: "black",

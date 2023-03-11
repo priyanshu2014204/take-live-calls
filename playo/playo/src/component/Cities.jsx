@@ -132,8 +132,8 @@ const Cities = () => {
           lineHeight: "1.8rem",
           width: "83%",
 				}}>
-				{cities.map((city) => (
-					<>
+				{cities.map((city,idx) => (
+					<div key={idx}>
 						<h4
 							style={{
 								margin: "1rem 0",
@@ -148,7 +148,7 @@ const Cities = () => {
 							}}>
 							{city.sub.join(" | ")}{" "}
 						</p>
-					</>
+					</div>
 				))}
 			</div>
       <Footer/>
