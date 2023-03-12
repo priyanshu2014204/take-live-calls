@@ -7,7 +7,7 @@ const Login = () => {
   const email = React.useRef();
   const password = React.useRef();
   const nevigate = useNavigate();
-  const url = "http://localhost:8080/user/login";
+  const url = "https://playo-9e5g.onrender.com/user/login";
 
   async function login(user) {
     let data = await fetch(url, {

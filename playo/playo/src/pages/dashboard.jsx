@@ -6,7 +6,7 @@ import Navbar from "../component/Navbar";
 
 const Dashboard = () => {
   const [dashvalue, setDashvalue] = useState([]);
-  const api = "http://localhost:8080/event/mydashboard";
+  const api = "https://playo-9e5g.onrender.com/event/mydashboard";
 
   async function dashdetails() {
     const token = localStorage.getItem("playo");
@@ -39,6 +39,7 @@ console.log(dashvalue)
         width: "80vw",
         background: "#ffffff",
         margin: "auto",
+        paddingTop:"100px"
       }}
     >
       <table

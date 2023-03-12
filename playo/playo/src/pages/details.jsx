@@ -6,7 +6,7 @@ import Swal from "sweetalert2"
 const Details = () => {
     const {detail} = useContext(ContextApi)
     const img='https://images.pexels.com/photos/3718433/pexels-photo-3718433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
-    const url='http://localhost:8080/event/bookticket/'
+    const url='https://playo-9e5g.onrender.com/event/bookticket/'
     const token=localStorage.getItem("playo");
   async  function bookslot(){
         const endpoint=detail._id;

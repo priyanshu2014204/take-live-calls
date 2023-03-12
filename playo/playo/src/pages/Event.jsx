@@ -5,7 +5,7 @@ import Swal from "sweetalert2"
 import { ContextApi } from "../context/Context";
 
 const Events = () => {
-    const url='http://localhost:8080/event/detail'
+    const url='https://playo-9e5g.onrender.com/event/detail'
     const {state,detail,setDetailFunction,setStateFunction} = useContext(ContextApi)
     const images=["https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/262524/pexels-photo-262524.jpeg?auto=compress&cs=tinysrgb&w=600"]
     const navigation=useNavigate()

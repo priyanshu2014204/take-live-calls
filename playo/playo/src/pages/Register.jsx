@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import Navbar from "../component/Navbar";
 
 const Register = () => {
-const url="http://localhost:8080/user/register"
+const url="https://playo-9e5g.onrender.com/user/register"
   const name = React.useRef();
   const email = React.useRef();
   const password = React.useRef();

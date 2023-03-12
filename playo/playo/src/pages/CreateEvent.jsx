@@ -4,7 +4,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 
 const CreateEvent = () => {
-  const url = "http://localhost:8080/event/createevent";
+  const url = "https://playo-9e5g.onrender.com/event/createevent";
 
  const navigate=useNavigate()
 

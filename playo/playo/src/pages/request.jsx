@@ -4,8 +4,8 @@ import Cities from "../component/Cities";
 import Navbar from "../component/Navbar";
 
 const Allrequest = () => {
-  const url = "http://localhost:8080/event/requestdata";
-  const conformticketurl="http://localhost:8080/event/conformticket"
+  const url = "https://playo-9e5g.onrender.com/event/requestdata";
+  const conformticketurl="https://playo-9e5g.onrender.com/event/conformticket"
   const [dummy, setDummy] = useState([]);
   const [mountdata,setmountdata]=useState(true)
 
