@@ -32,7 +32,7 @@ const schema=new mongoose.Schema({
     required:true
   },
    date:{
-    type:Date,
+    type:String, // storing the data in string for better operation and converting it back to DATE when ever required
     required:true
    }
   ,
@@ -43,7 +43,7 @@ const schema=new mongoose.Schema({
     }
   ],
   organisedby:{
-    type:String,
+    type:mongoose.Schema.Types.ObjectId,
     require:true,
     ref:"user"
   }

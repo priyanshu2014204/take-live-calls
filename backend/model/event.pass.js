@@ -8,7 +8,7 @@ const schema=new mongoose.Schema({
     ref:"event"
    },
    userid:{
-    type:String,
+    type:mongoose.Schema.Types.ObjectId,
     require:true
    },
    status:{

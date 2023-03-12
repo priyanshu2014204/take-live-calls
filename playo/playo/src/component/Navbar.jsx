@@ -1,15 +1,27 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ContextApi } from "../context/Context";
 
 const Navbar = ({ bool }) => {
   const [show, setShow] = useState(false);
+
   const { userData, isAuth } = useContext(ContextApi);
   // console.log("navbar", userData);
   const nevigate = useNavigate();
   const handleLogin = () => {
     nevigate("/register");
   };
+  const handleLogout = () => {
+    localStorage.removeItem("playo");
+    nevigate('/')
+    window.location.reload()
+  }
+
+  const navigatetohome=()=>{
+    nevigate('/')
+  }
+
+
   return (
     <div
       style={{
@@ -25,6 +37,20 @@ const Navbar = ({ bool }) => {
         position: "fixed",
       }}
     >
+    <div
+    style={{
+      position:"absolute",
+      top:"20px",
+      left:"100px",
+      fontSize:"130%",
+      cursor:"pointer"
+    }}
+ onClick={navigatetohome}
+
+    >
+      Home
+    </div>
+
       <div
         style={{
           display: "flex",
@@ -71,7 +97,6 @@ const Navbar = ({ bool }) => {
         ) : (
           <div style={{ position: "relative" }}>
             <button
-              onClick={handleLogin}
               style={{
                 background: "linear-gradient(to  right,#63db0e,#05b75f)",
                 border: "none",
@@ -116,10 +141,12 @@ const Navbar = ({ bool }) => {
               <Link to="/dashboard" style={{ textDecoration: "none" }}>
                 Dashboard
               </Link>
-              <Link to="#" style={{ textDecoration: "none" }}>
+              <Link to="/createevent" style={{ textDecoration: "none" }}>
                 Create
               </Link>
-              <Link to="#" style={{ textDecoration: "none" }}>
+              <Link to="#" style={{ textDecoration: "none" }}
+               onClick={handleLogout}
+              >
                 Logout
               </Link>
             </div>
