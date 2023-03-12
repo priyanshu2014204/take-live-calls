@@ -30,9 +30,14 @@ const CreateEvent = () => {
             'Error!',
             'Event Created ',
             'success'
-          )
-    }else{
-        alert("something went wrong")
+            )
+        }else{
+            data = await data.json();;
+            Swal.fire(
+                'Error!',
+                data.msg,
+                'warning'
+                )
     }
    
   }
@@ -64,8 +69,8 @@ const CreateEvent = () => {
     });
     if(bool>1){
          alert("Fill all input fields");
-    }
-    makeEventcall(eventData);
+    }else{
+      makeEventcall(eventData)}
   };
   return (
   <>
