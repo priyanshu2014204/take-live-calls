@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import Navbar from "../component/Navbar";
 
 const Register = () => {
-const url="https://playo-9e5g.onrender.com/user/register"
+const url="http://localhost:8080/user/register"
   const name = React.useRef();
   const email = React.useRef();
   const password = React.useRef();
@@ -27,6 +27,7 @@ const url="https://playo-9e5g.onrender.com/user/register"
 	  window.location.reload()
     } else {
 		let {msg}=await data.json();
+		console.log("abc")
       Swal.fire("Unauthorize!", msg, "warning");
     }
   }
@@ -39,9 +40,9 @@ const url="https://playo-9e5g.onrender.com/user/register"
       password: password.current.value,
     };
     registerme(user);
-    name.current.value = "";
-    email.current.value = "";
-    password.current.value = "";
+    // name.current.value = "";
+    // email.current.value = "";
+    // password.current.value = "";
 
     setTimeout(() => {
       // nevigate('/login')

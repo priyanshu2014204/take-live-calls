@@ -7,6 +7,11 @@ const bcrypt = require("bcrypt");
 exports.register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
+    console.log(username,"username")
+   if(email==="" || email=="" || password==""){
+    return res.status(500).send({"msg":"enter proper fields"})
+   }
+
     let user = await User.findOne({ $or: [{ email }, { username }] });
     if (user) {
       return res

@@ -15,6 +15,7 @@ const BookingBox = () => {
 		 if(data.status==200){
 			data=await data.json();
 			setStateFunction(data)
+			console.log(data)
 			nevigate('/events')
 		 }else{
 			Swal.fire(

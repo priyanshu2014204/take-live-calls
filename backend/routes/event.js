@@ -9,7 +9,7 @@ router.get("/detail/:eventid",getdetailofevent)  //authentication required for t
 router.post("/mydashboard",authenticated,mydashboard)  
 router.post("/bookticket/:id",authenticated,bookticket)
 router.post("/conformticket/:eventid",authenticated,conformticket)
-router.post("/requestdata",authenticated,requestalldata)
+router.post("/conformticket/:eventid",authenticated,requestalldata)
 router.post("/rejectoutdated",authenticated,rejectpendingone)
 
 
