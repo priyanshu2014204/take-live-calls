@@ -9,7 +9,7 @@ export default function Context({ children }) {
   const [userData, setUserData] = useState(null);
   const getUser = async () => {
     const token = localStorage.getItem("playo");
-    const url = "http://localhost:8080/user/details";
+    const url = "https://playo-9e5g.onrender.com/user/details";
     fetch(url, {
       method: "Post",
       headers: {

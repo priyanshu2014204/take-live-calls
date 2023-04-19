@@ -9,7 +9,7 @@ const BookingBox = () => {
 	const {setStateFunction} = useContext(ContextApi)
 	const nevigate = useNavigate();
 	const locationValue = React.useRef(null);
-	const url="http://localhost:8080/event/searcheventbycity?city="
+	const url="https://playo-9e5g.onrender.com/event/searcheventbycity?city="
     async function showevents(city){
          let data=await fetch(url+city);
 		 if(data.status==200){
