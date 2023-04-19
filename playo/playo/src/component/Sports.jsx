@@ -1,5 +1,5 @@
 import React from 'react'
-import SportSection from '../utils/sportSection';
+import SportSection from '../utils/SportSection';
 import Stats from '../utils/Stats';
 import Title from '../utils/Title'
 
